@@ -1,0 +1,375 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f7fb;
+  --foreground: #172b4d;
+  --primary: #173b78;
+  --primary-hover: #102a56;
+  --card-bg: #ffffff;
+  --border: #d8e1ed;
+  --muted: #718096;
+  --muted-bg: #edf2f8;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-card-bg: var(--card-bg);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-bg: var(--muted-bg);
+}
+
+body, input, button, select, textarea {
+  font-family: var(--font-quicksand), 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Arito brand palette: navy, clear blue, and cool neutral surfaces. */
+.arito-shell {
+  --ink: #172b4d;
+  --sea: #dce7f5;
+  --sea-deep: #31588f;
+  --coral: #173b78;
+  --paper: #f4f7fb;
+  --line: #d8e1ed;
+  background:
+    radial-gradient(ellipse at 77% 26%, rgba(209, 223, 242, .72), transparent 48%),
+    linear-gradient(125deg, #f4f7fb 0%, #edf2f8 56%, #e5edf7 100%);
+  color: var(--ink);
+  isolation: isolate;
+}
+
+.arito-shell aside {
+  background: rgba(255, 255, 255, .96) !important;
+  border-color: rgba(49, 88, 143, .16) !important;
+  box-shadow: 8px 0 32px rgba(23, 43, 77, .05) !important;
+}
+
+.arito-shell header {
+  background: rgba(244, 247, 251, .82) !important;
+  border-color: rgba(49, 88, 143, .16) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(16px);
+}
+
+.arito-shell main {
+  background: transparent !important;
+  scrollbar-color: #b8c8dc transparent;
+}
+
+.arito-shell [class~="border-blue-100"],
+.arito-shell [class~="border-blue-100/80"],
+.arito-shell [class~="border-blue-200/80"],
+.arito-shell [class~="border-emerald-200/80"] {
+  border-color: var(--line) !important;
+}
+
+.arito-shell [class~="bg-blue-600"],
+.arito-shell [class~="bg-blue-700"] {
+  background-color: var(--ink) !important;
+}
+
+.arito-shell [class~="bg-blue-50"],
+.arito-shell [class~="bg-blue-50/60"],
+.arito-shell [class~="bg-blue-50/70"],
+.arito-shell [class~="bg-blue-100/50"],
+.arito-shell [class~="bg-blue-100/80"],
+.arito-shell [class~="bg-blue-200/50"] {
+  background-color: rgba(220, 231, 245, .68) !important;
+}
+
+.arito-shell [class~="text-blue-600"],
+.arito-shell [class~="text-blue-700"],
+.arito-shell [class~="text-blue-800"],
+.arito-shell [class~="text-blue-900"],
+.arito-shell [class~="text-blue-950"] {
+  color: var(--sea-deep) !important;
+}
+
+.arito-shell [class~="bg-white"],
+.arito-shell [class~="bg-white/95"] {
+  background-color: rgba(255, 255, 255, .9) !important;
+}
+
+.arito-shell #sidebar-nav a[aria-current="page"] {
+  background-color: var(--coral) !important;
+  border-color: var(--coral) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 16px rgba(23, 59, 120, .18);
+}
+
+.arito-shell main [class*="rounded-2xl"][class*="border"] {
+  border-color: rgba(49, 88, 143, .16);
+  box-shadow: 0 12px 32px rgba(23, 43, 77, .035);
+}
+
+.arito-shell input,
+.arito-shell select,
+.arito-shell textarea {
+  border-color: rgba(49, 88, 143, .24);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, .96);
+  color: var(--ink);
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+
+.arito-shell input:focus,
+.arito-shell select:focus,
+.arito-shell textarea:focus {
+  border-color: var(--sea-deep);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(49, 88, 143, .14);
+}
+
+.arito-shell main table thead th {
+  background: #edf2f8;
+  color: #526784;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.arito-shell main table tbody tr {
+  transition: background-color .16s ease;
+}
+
+.arito-shell main table tbody tr:hover {
+  background-color: rgba(220, 231, 245, .32);
+}
+
+.arito-shell button,
+.arito-shell a {
+  transition-duration: .18s;
+}
+
+.arito-shell [class~="hover:bg-blue-50"]:hover,
+.arito-shell [class~="hover:bg-blue-50/70"]:hover,
+.arito-shell [class~="hover:bg-blue-100"]:hover,
+.arito-shell [class~="hover:bg-blue-200/50"]:hover {
+  background-color: rgba(220, 231, 245, .62) !important;
+}
+
+/* Sidebar navigation icon enforcement */
+#sidebar-nav svg {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  max-width: 20px !important;
+  max-height: 20px !important;
+  display: inline-block !important;
+  flex-shrink: 0 !important;
+}
+
+#sidebar-nav button {
+  min-height: 44px;
+}
+
+/* Smooth Tab Content Slide Animations (GPU Accelerated with Motion Blur) */
+@keyframes tabGlideRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(20px, 0, 0);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0px);
+  }
+}
+
+@keyframes tabGlideLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-20px, 0, 0);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0px);
+  }
+}
+
+.animate-tab-glide-right {
+  animation: tabGlideRight 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+.animate-tab-glide-left {
+  animation: tabGlideLeft 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes tabSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-tab-slide-up {
+  animation: tabSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Job Detail Scroll-Down Smooth Entrance Animation */
+@keyframes jobCardSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0) scale(0.985);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 0.92;
+    filter: blur(0.5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.animate-job-card-entrance {
+  animation: jobCardSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes tabSlideRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes tabSlideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-tab-slide-right {
+  animation: tabSlideRight 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-tab-slide-left {
+  animation: tabSlideLeft 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth, Elegant Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 9999px;
+  margin: 2px 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #93c5fd;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #2563eb;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Custom Table Scrollbar Utility */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f8fafc;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 9999px;
+  margin: 2px 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+  background: #2563eb;
+}
+
+/* Hide Next.js Development Indicator Badge completely */
+[data-nextjs-dev-tools-button],
+[data-nextjs-toast],
+[data-nextjs-indicator],
+nextjs-portal,
+#nextjs-dev-overlay,
+button[aria-label*="Next.js"],
+button[aria-label*="Next"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
